@@ -4,18 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz Me</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="timer"></div>
-    <h2>Coding Quiz</h2>
-    <p> Ready to start</p>
-    <button id="start-btn">Start</button>
-    <div id="questions">
-        <h2 id="question-title"></h2>
-        <div id="answers"></div>
+    <header class="header">
+        <h1 class="scorelink" id="high-scores">View High Scores</h1>
+        <div>
+            <div class="clock">Time Remaining</div>
+            <div class="time" id="timer"></div>
+        </div>
+    </header>
+<main class="container">
+    <h2 class="quiz" id="quiz-start">Coding Quiz</h2>
+    <p>Ready to start</p>
+    <div id="questions-container" class="hide">
+        <div id="question">Question</div>
+        <div id="answers-buttons" class="btn-grid">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+        </div>
     </div>
+    <div class="controls">
+        <button id="start-btn" class="start-btn btn hide">Start</button>
+        <button id="next-btn" class="next-btn btn hide">Next</button>
+    </div>
+</main>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
