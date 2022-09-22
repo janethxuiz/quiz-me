@@ -28,9 +28,9 @@ var listOfHighScores = document.getElementById("listOfHighScores");
 
 const questions = [
     {
-        question: "Inside which HTML element do we put the JavaScript?",
-        choices: ["a. <js>", "b. <javascript>", "c. <scripting>", "d. <script>"],
-        answer: "d. <script>"
+        question: "What Javascript method can we use to select an html element",
+        choices: ["a. document.queryselector()", "b. document.getElementChild", "c. document.getElementById", "d. Both a & c"],
+        answer: "d. Both a & c"
     },
     {
         question: "String values must be enclosed within _____ when being assigned to variables.",
@@ -38,76 +38,31 @@ const questions = [
         answer: "c. quotes"
     },
     {
-        question: "Arrays in JavaScript can be used to store _____.",
-        choices: ["a. numbers and strings", "b. other arrays", "c. booleans", "d. all of the above"],
-        answer: "b. other arrays"
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        choices: ["a. Javascript", "b. console.log", "c. terminal", "d. for loops"],
+        answer: "b. console.log"
     },
     {
-        question: "Commonly used data types DO NOT include:",
-        choices: ["a. strings", "b. booleans", "c. alerts", "d. numbers"],
-        answer: "c. alerts"
+        question: "The condition in an if/else statement is enclosed with ___",
+        choices: ["a. quotes", "b. curly brackets", "c. parenthesis", "d. square brackets"],
+        answer: "b. curly brackets"
     },
     {
         question: "How do you create a function in JavaScript",
         choices: ["a. function = myFunction()", "b. function myFunction()", "c. function:myFunction()", "d. createMyFunction()"],
         answer: "b. function myFunction()"
-    },
-    {
-        question: "How do you call a function named myFunction?",
-        choices: ["a. call myFunction()", "b. call function myFunction()", "c. myFunction()", "d. call myFunction"],
-        answer: "c. myFunctions()"
-    },
-    {
-        question: "To see if two variables are equal in an if / else statement you would use ____.",
-        choices: ["a. =", "b. ==", "c. 'equals'", "d. !="],
-        answer: "b. =="
-    },
-    {
-        question: "The first index of an array is ____.",
-        choices: ["a. 0", "b. 1", "c. 8", "d. any"],
-        answer: "a. 0"
-    },
-    {
-        question: "Who invented JavaScript?",
-        choices: ["a. Douglas Crockford", "b. Sheryl Sandberg", "c. Brendan Eich", "d. Ben Javascript"],
-        answer: "c. Brendan Eich"
-    },
-    {
-        question: "How to write an IF statement in JavaScript?",
-        choices: ["a. if i == 5 then", "b. if i = 5 then", "c. if(i == 5)", "d. if i = 5"],
-        answer: "c. if(i == 5)"
-    },
-    {
-        question: "How do you add a comment in a JavaScript?",
-        choices: ["a. //This is a comment", "b. <!--This is a comment-->", "c. 'This is a comment", "d. * This is a comment *"],
-        answer: "a. //This is a comment"
-    },
-    {
-        question: "Which event occurs when the user clicks on an HTML element?",
-        choices: ["a. onclick", "b. onchange", "c. onmouseover", "d. onmouseclick"],
-        answer: "a. onclick"
     }
 ];
 
-// function startQuiz()
-
-// function endQuiz
-
-// define other variables
 var correctAns = 0;
 var questionNum = 0;
 var scoreResult;
 var questionIndex = 0;
+var totalTime = 100;
 
-/**
- * FUNCTIONS
- */
-
-// WHEN I click the start button, timer starts
-var totalTime = 151;
 function newQuiz() {
     questionIndex = 0;
-    totalTime = 150;
+    totalTime = 100;
     timeLeft.textContent = totalTime;
     initialInput.textContent = "";
 
@@ -130,7 +85,6 @@ function newQuiz() {
     showQuiz();
 };
 
-// then presented with questions and choices
 function showQuiz() {
     nextQuestion();
 }
@@ -143,7 +97,6 @@ function nextQuestion() {
     choiceD.textContent = questions[questionIndex].choices[3];
 }
 
-// after question is answered, show if correct or wrong
 function checkAnswer(answer) {
 
     var lineBreak = document.getElementById("lineBreak");
@@ -151,23 +104,18 @@ function checkAnswer(answer) {
     answerCheck.style.display = "block";
 
     if (questions[questionIndex].answer === questions[questionIndex].choices[answer]) {
-        // correct answer, add 1 score to final score
         correctAns++;
-        // console.log(correctAns);
         answerCheck.textContent = "Correct!";
     } else {
-        // wrong answer, deduct 10 second from timer
         totalTime -= 10;
         timeLeft.textContent = totalTime;
         answerCheck.textContent = "Wrong! The correct answer is: " + questions[questionIndex].answer;
     }
 
     questionIndex++;
-    // repeat with the rest of questions 
     if (questionIndex < questions.length) {
         nextQuestion();
     } else {
-        // if no more question, run game over function
         gameOver();
     }
 }
@@ -180,23 +128,18 @@ function chooseC() { checkAnswer(2); }
 
 function chooseD() { checkAnswer(3); }
 
-// when all questions are answered or timer reaches 0, game over
 function gameOver() {
     summary.style.display = "block";
     questionDiv.style.display = "none";
     startDiv.style.display = "none";
     timer.style.display = "none";
     timesUp.style.display = "block";
-
-    // show final score
     finalScore.textContent = correctAns;
 }
 
-// enter initial and store highscore in local storage
 function storeHighScores(event) {
     event.preventDefault();
 
-    // stop function is initial is blank
     if (initialInput.value === "") {
         alert("Please enter your initials!");
         return;
@@ -208,7 +151,6 @@ function storeHighScores(event) {
     summary.style.display = "none";
     highScoreSection.style.display = "block";   
 
-    // store scores into local storage
     var savedHighScores = localStorage.getItem("high scores");
     var scoresArray;
 
@@ -226,15 +168,12 @@ function storeHighScores(event) {
     console.log(userScore);
     scoresArray.push(userScore);
 
-    // stringify array in order to store in local
     var scoresArrayString = JSON.stringify(scoresArray);
     window.localStorage.setItem("high scores", scoresArrayString);
     
-    // show current highscores
     showHighScores();
 }
 
-// function to show high scores
 var i = 0;
 function showHighScores() {
 
