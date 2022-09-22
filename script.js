@@ -98,11 +98,11 @@ function checkAnswer(answer) {
 
     if (questions[questionIndex].answer === questions[questionIndex].choices[answer]) {
         correctAns++;
-        answerCheck.textContent = "Correct!";
+        answerCheck.textContent = "Correct! weeeeee!!!";
     } else {
         totalTime -= 10;
         timeLeft.textContent = totalTime;
-        answerCheck.textContent = "Wrong! The correct answer is: " + questions[questionIndex].answer;
+        answerCheck.textContent = "Wrong! Take your L The correct answer is: " + questions[questionIndex].answer;
     }
 
     questionIndex++;
