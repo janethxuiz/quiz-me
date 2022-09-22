@@ -10,3 +10,5 @@ https://janethxuiz.github.io/quiz-me/
 ## walk thru video
 https://watch.screencastify.com/v/FkkPnMRu7CfMRt6siCBt
 
+## Demo
+![](assets/images/quiz%20me%20app%20walkthru.gif)
