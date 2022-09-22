@@ -4,7 +4,7 @@ body {
 
 h1, 
 h2 {
-    color: #313740;
+    color: #52698b;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -21,7 +21,7 @@ a:hover {
 .btn:focus, .btn:active, .btn:visited {
     outline: none !important;
     box-shadow: none !important;
-    background-color: #343a40;
+    background-color: #52698b;
 }
 
 #finalScore {
@@ -44,5 +44,5 @@ p {
 
 #answerCheck {
     font-style: italic;
-    color: #4D5159;
+    color: #52698b;
 }
