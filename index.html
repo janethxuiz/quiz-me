@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- header -->
+    <!-- what you see at the top left and top right (header) -->
 <div class="container-fluid">
     <div class="row">
         <div class="col text-left">
@@ -25,7 +25,7 @@
 <div id="everything" class="row text-left">
     <div class="col-md-2"></div>
       <main class="col-md-8 mt-5">
-          <!-- start screen -->
+          <!-- begining of the quiz. Main page -->
           <div id="start" class="m-2 justify-content-center">
               <h1 class="font-weight-bold pl-5 pr-5">Quiz Me Challenge</h1>
               <p class="p-5">Anwser the following questions and test your knowledge on some Javascript</p>
@@ -43,7 +43,7 @@
             <p id="answerCheck" style="display: none;"></p>
         </div>
       </div>
-
+<!-- final score page where you enter your initials -->
       <div class="pl-5 ml-2 pt-5 justify-content-center font-weight-bold" id="summary" style="display: none;">
         <div class="col-2"></div>
         <div class="col-8 text-left">
@@ -56,13 +56,13 @@
         </div>
     <div class="col-2"></div>
 </div>
-      <!-- Highscore section -->
+      <!-- Highscore section where you're able to view your scores and others/past scores-->
     <div id="highScoreSection" class="pl-5 ml-4 pt-5 justify-content-center font-weight-bold" style="display: none;">
         <h2 class="font-weight-bold pt-2 pb-3 mb-2">High Scores</h2>                   
         <div id="listOfHighScores" class="list-group list-group-flush pt-2 pb-3 mb-2"></div>
         <p>
-            <button type="submit" class="btn btn-info mt-3 mr-3" id="backBtn">Go Back</button>
-            <button type="submit" class="btn btn-info mt-3" id="clearHighScoreBtn">Clear High Scores</button>
+            <button type="submit" class="btn btn-outline-secondary mt-3 mr-3" id="backBtn">Go Back</button>
+            <button type="submit" class="btn btn-outline-secondary mt-3" id="clearHighScoreBtn">Clear High Scores</button>
         </p>
     </div>
 </main>
