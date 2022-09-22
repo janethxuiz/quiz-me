@@ -7,3 +7,6 @@ Once you start, the timer will start counting dowwn and for every wrong anwser y
 ## link to app
 https://janethxuiz.github.io/quiz-me/
 
+## walk thru video
+https://watch.screencastify.com/v/FkkPnMRu7CfMRt6siCBt
+
