@@ -7,10 +7,10 @@ var startQuizBtn = document.getElementById("start-quiz-button");
 
 var questionDiv = document.getElementById("questionDiv");
 var questionTitle = document.getElementById("questionTitle");
-var choiceA = document.getElementById("btn0");
-var choiceB = document.getElementById("btn1");
-var choiceC = document.getElementById("btn2");
-var choiceD = document.getElementById("btn3");
+var choiceA = document.getElementById("btn1");
+var choiceB = document.getElementById("btn2");
+var choiceC = document.getElementById("btn3");
+var choiceD = document.getElementById("btn4");
 var answerCheck = document.getElementById("answerCheck");
 
 var summary = document.getElementById("summary");
@@ -91,10 +91,10 @@ function showQuiz() {
 
 function nextQuestion() {
     questionTitle.textContent = questions[questionIndex].question;
-    choiceA.textContent = questions[questionIndex].choices[0];
-    choiceB.textContent = questions[questionIndex].choices[1];
-    choiceC.textContent = questions[questionIndex].choices[2];
-    choiceD.textContent = questions[questionIndex].choices[3];
+    choiceA.textContent = questions[questionIndex].choices[1];
+    choiceB.textContent = questions[questionIndex].choices[2];
+    choiceC.textContent = questions[questionIndex].choices[3];
+    choiceD.textContent = questions[questionIndex].choices[4];
 }
 
 function checkAnswer(answer) {
@@ -120,13 +120,13 @@ function checkAnswer(answer) {
     }
 }
 
-function chooseA() { checkAnswer(0); }
+function chooseA() { checkAnswer(1); }
 
-function chooseB() { checkAnswer(1); }
+function chooseB() { checkAnswer(2); }
 
-function chooseC() { checkAnswer(2); }
+function chooseC() { checkAnswer(3); }
 
-function chooseD() { checkAnswer(3); }
+function chooseD() { checkAnswer(4); }
 
 function gameOver() {
     summary.style.display = "block";
